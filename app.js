@@ -149,8 +149,6 @@ app.get('/lotto', (req, res) => {
         winningNumbers.push(stockNumbers[random]);
         stockNumbers.splice(random, 1);
     }
-    console.log(winningNumbers);
-    console.log(guesses);
 
     let count = 0;
     winningNumbers.forEach(num => {
@@ -158,6 +156,11 @@ app.get('/lotto', (req, res) => {
             count++;
         }
     });
+
+    // res.json({
+    //     guesses,
+    //     winningNumbers
+    // });
 
     switch(count) {
         case 0 :
